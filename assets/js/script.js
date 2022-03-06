@@ -19,10 +19,11 @@ function generatePassword() {
   var numbers1 = [0, 1 ,2, 3, 4, 5, 6, 7, 8, 9]
   //Array that holds all of my arrays
   var CharArray = []
-
+//variables that hold password length and that parse the given input to an integer
   var passLength = (window.prompt("What is the length of your password? Give a value between 8-128",""));
   var passLengthInt = parseInt(passLength);
   console.log(passLength)
+  //If statements that can return out of this function if certain criteria are not met or continue the function, adding my various lower/upp/chars/numbers1 arrays to the empty character array to have the password generated from those. 
   if (passLength === (null)) {
     window.alert("Goodbye")
     return
@@ -50,8 +51,9 @@ function generatePassword() {
         if (passCase2 === true){
           CharArray.push(lowercase)
         }
+        //empty passtring for the password to be written to
       var passString = ''  
-
+        //for loop for randomly iterating through the character array and randomlist
       for (var i=0; i<=passLengthInt;i++) {
         var randomlist = random(CharArray)
         passString += random(randomlist)
