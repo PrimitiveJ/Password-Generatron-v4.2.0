@@ -21,4 +21,43 @@ function generatePassword() {
   var CharArray = []
 
  
+  var passLength = (window.prompt("What is the length of your password? Give a value between 8-128",""));
+  var passLengthInt = parseInt(passLength);
+  console.log(passLength)
+  if (passLength === (null)) {
+    window.alert("Goodbye")
+    return
+  }
+  if (isNaN(passLengthInt)) {
+    window.alert("That is not a number my g, try again.")
+    generatePassword();
+  }  else  if  (passLengthInt >= 129 || passLengthInt <= 7) {
+      window.alert("That is outside of the given range, please enter a different number.")
+      generatePassword();
+    }else {
+      var passChar = window.confirm("Do you want to use special characters?")
+        if (passChar === true){
+          CharArray.push(chars)
+        }
+        var passNum = window.confirm("Do you want to use numbers?")
+        if (passNum === true){
+          CharArray.push(numbers1)
+        }
+        var passCase1 = window.confirm("Do you want to use uppercase characters?")
+        if (passCase1 === true){
+          CharArray.push(uppercase)
+        }
+        var passCase2 = window.confirm("Do you want to use lowercase characters?")
+        if (passCase2 === true){
+          CharArray.push(lowercase)
+        }
+      var passString = ''  
+
+      for (var i=0; i<=passLengthInt;i++) {
+        var randomlist = random(CharArray)
+        passString += random(randomlist)
+      }
+      return passString
+    }  
+  }
 
