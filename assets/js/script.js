@@ -20,7 +20,6 @@ function generatePassword() {
   //Array that holds all of my arrays
   var CharArray = []
 
- 
   var passLength = (window.prompt("What is the length of your password? Give a value between 8-128",""));
   var passLengthInt = parseInt(passLength);
   console.log(passLength)
@@ -60,7 +59,7 @@ function generatePassword() {
       return passString
     }  
   }
-  // Get references to the #generate element
+// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -74,6 +73,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 
